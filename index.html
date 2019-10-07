@@ -1,160 +1,175 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wild Rydes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
 
-  <link rel="stylesheet" href="css/font.css">
-  <link rel="stylesheet" href="css/main.css">
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
-  <script src="js/vendor/modernizr.js"></script>
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
 </head>
-<body class="page-home">
+<body>
 
-  <header class="site-header">
-    <h1 class="title">Wild Rydes</h1>
-    <nav class="site-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="unicorns.html">Meet the Unicorns</a></li>
-        <li><a href="investors.html">Investors &amp; Board of Directors</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="apply.html">Apply</a></li>
-      </ul>
-    </nav>
-    <button type="button" class="btn-menu"><span>Menu</span></button>
-    <a class="home-button" href="/register.html">Giddy Up!</a>
-  </header>
+<h2>Modal Login Form</h2>
 
-  <section class="home-about">
-    <div class="row column large-9 xlarge-6 xxlarge-4">
-      <h2 class="section-title">How Does This Work?</h2>
-      <p class="content">
-        In today’s fast paced world, you’ve got places you need to be but not enough time in your jam packed schedule. Wouldn’t it be nice if there were a transportation service that changed the way you get around daily? Introducing Wild Rydes, an innovative transportation service that helps people get to their destination faster and hassle-free. Getting started is as easy as tapping a button in our app.
-      </p>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
 
-    <div class="row medium-up-2 large-up-4">
-      <div class="column">
-        <div class="home-about-block">
-          <h3 class="title icon-download">Download The App</h3>
-          <p class="content">Head over to the app store and download the Wild Rydes app. You’re just a few taps away from getting your ryde.</p>
-        </div>
-      </div>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
 
-      <div class="column">
-        <div class="home-about-block">
-          <h3 class="title icon-unicorn">Request A Unicorn</h3>
-          <p class="content">We can get you there. Simply request a ryde on the app and we'll connect you with a unicorn immediately.</p>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="home-about-block">
-          <h3 class="title icon-price">Pick A Price</h3>
-          <p class="content">Pick the valuation you're willing to pay and your ryde is set up. The only surge is the acceleration you get when taking off.</p>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="home-about-block">
-          <h3 class="title icon-success">Ride Off To Success!</h3>
-          <p class="content">After matching with your unicorn and agreeing to its terms, you’ll be all set. Your unicorn will arrive shortly to pick you up.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-story">
-    <div class="row column large-9 xlarge-6 xxlarge-4">
-      <h2 class="section-title">Our Story</h2>
-      <p class="content">
-        Wild Rydes was started by a former hedge fund analyst and a software developer. The two long-time friends happened upon the Wild Rydes idea after attending a silent yoga retreat in Nevada. After gazing upon the majestic herds of unicorns prancing across a surreal Nevada sunset, they witnessed firsthand the poverty and unemployment endemic to that once proud race. Whether it was modern society’s reliance on science over magic or not, we’ll never know the cause of their Ozymandian downfall and fade to obscurity. Moved by empathy, romance, and free enterprise, they saw an opportunity to marry society’s demand for faster, more flexible transportation to underutilized beasts of labor through an on-demand market making transportation app. Using the founders’ respective expertise in animal husbandry and software engineering, Wild Rydes was formed and has since raised untold amounts of venture capital. Today, Wild Rydes has thousands of unicorns in its network fulfilling hundreds of rydes each day.
-      </p>
-    </div>
-  </section>
-
-  <section class="home-sign-up">
-    <div class="row column">
-      <img class="icon-w" src="images/wr-home-W.png">
-
-      <form onsubmit="javascript:void(0);">
-        <input type="email" placeholder="Enter your email address">
-        <button type="button">Submit</button>
-      </form>
-
-      <h2 class="section-title">Sign Up</h2>
-
-      <p class="content">Wild Rydes is coming soon! Enter your email to enter the limited private beta</p>
-
-      <div class="apps">
-        <a class="app-icon" href=""><img src="images/wr-home-apple.png"></a>
-        <a class="app-icon" href=""><img src="images/wr-home-google.png"></a>
-        <a class="app-icon" href=""><img src="images/wr-home-blackberry.png"></a>
-        <a class="app-icon" href=""><img src="images/wr-home-Xiaomi.png"></a>
-      </div>
-
-      <div class="social">
-        <a class="icon-fb" href="">Facebook</a>
-        <a class="icon-tw" href="">Twitter</a>
-        <a class="icon-ig" href="">Instagram</a>
-        <a class="icon-wc" href="">Wechat</a>
-        <a class="icon-wb" href="">Weibo</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-quote">
-    <div class="row column medium-8 xxlarge-6">
-      <div class="quote-wrap">
-        <div class="quote">
-          “I was almost late to my ultimate frisbee tournament in DOLORES park. BUt Wild Rydes Got me there from the marina in under five minutes.”
-        </div>
-        <div class="quoter">- Satisfied Wild Rydes User</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="kraken-callout">
-    <div class="row">
-      <div class="columns medium-6 xxlarge-4 xxlarge-offset-2">
-        <img src="images/wr-home-kraken.png">
-      </div>
-
-      <div class="columns medium-6 xlarge-5 xxlarge-4">
-        <h4 class="title">Coming Soon</h4>
-        <p class="content">
-          Kraken 3xplorer and Dragon Flyght. We’re looking to provide you a full service package from air, land, and to sea.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="row column">
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="unicorns.html">Meet the Unicorns</a></li>
-          <li><a href="investors.html">Investors & Board of Directors</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="apply.html">Apply</a></li>
-        </ul>
-      </nav>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
     </div>
 
-    <div class="row column">
-      <div class="footer-legal">
-        &copy;WildRydes Inc<br>
-        All Rights Reserved
-      </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
-  </footer>
+  </form>
+</div>
 
-  <script src="js/vendor.js"></script>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
 
-  <script src="js/main.js"></script>
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 </body>
 </html>
